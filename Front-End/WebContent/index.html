@@ -19,7 +19,7 @@
 <!-- JavaScript é para manipular dados e fazer querisições para o lado do servidor -->
 
 
-<form action="" style="margin-left: 40%; ">
+<form action="" method="post" style="margin-left: 40%;"  onsubmit="return validarDados()? true : false">
 
 <table>
 			<tr align="center">
@@ -29,7 +29,7 @@
 			
 			<tr>
 				<td><label>Login:</label></td>
-				<td><input type="text" id="nome" name="login" style="color: red; border-radius: 5px;"/></td>
+				<td><input type="text" id="login" name="login" style="color: red; border-radius: 5px;"/></td>
 			</tr>
 			
 			<tr>
@@ -39,13 +39,35 @@
 
 			<tr>
 				<td/>
-				<td><input type="submit" value="Salvar"  id="butao" style="width: 100%; border-radius:5px; "/></td>
+				<td><input type="submit" value="Salvar"  id="butao" style="width: 100%; border-radius:5px;" /></td>
 			</tr>
 
 		</table>
-
-
 </form>
+
+<script type="text/javascript">
+function validarDados(){
+	
+
+	var nome=document.getElementById("nome"). value;
+	var login=document.getElementById("login").value;
+	var senha=document.getElementById ("senha").value
+	
+	
+	if (nome == '') {
+			alert('Informe o nome!');
+			return false;
+		} else if (login == '') {
+			alert('Informe o login!');
+			return false;
+		} else if (senha == "") {
+			alert('Informe senha!');
+			return false;
+		}
+		return true;
+	}
+</script>
+
 
 </body>
 </html>
